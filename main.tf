@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     vsphere = {
-      source = "hashicorp/vsphere"
+      source  = "hashicorp/vsphere"
       version = "2.6.0"
     }
   }
@@ -21,7 +21,7 @@ locals {
     ipv4_gateway = var.ipv4_gateway,
     dns_server_1 = var.dns_server_list[0],
     dns_server_2 = var.dns_server_list[1],
-    public_key = var.public_key,
+    public_key   = var.public_key,
     ssh_username = var.ssh_username
   }
 }
@@ -70,7 +70,7 @@ resource "vsphere_virtual_machine" "vm" {
     label            = "${var.name}-disk"
     thin_provisioned = data.vsphere_virtual_machine.template.disks.0.thin_provisioned
     eagerly_scrub    = data.vsphere_virtual_machine.template.disks.0.eagerly_scrub
-    size             = var.disksize == "" ? data.vsphere_virtual_machine.template.disks.0.size : var.disksize 
+    size             = var.disksize == "" ? data.vsphere_virtual_machine.template.disks.0.size : var.disksize
   }
 
   clone {

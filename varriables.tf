@@ -5,19 +5,19 @@
 variable "vsphere_user" {
   type        = string
   description = "VMware vSphere user name"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "vsphere_password" {
   type        = string
   description = "VMware vSphere password"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "vsphere_vcenter" {
   type        = string
   description = "VMWare vCenter server FQDN / IP"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "vsphere-unverified-ssl" {
@@ -39,7 +39,7 @@ variable "vsphere-cluster" {
 variable "vsphere-template-folder" {
   type        = string
   description = "Template folder"
-  default = "Templates"
+  default     = "Templates"
 }
 
 #================================#
@@ -54,7 +54,7 @@ variable "name" {
 variable "vm-name-prefix" {
   type        = string
   description = "Name of VM prefix"
-  default     =  "k3sup"
+  default     = "k3sup"
 }
 
 variable "vm-datastore" {
@@ -89,7 +89,7 @@ variable "ram" {
 
 variable "disksize" {
   description = "Disk size, example 100 for 100 GB"
-  default = ""
+  default     = ""
 }
 
 variable "vm-guest-id" {
@@ -109,13 +109,13 @@ variable "vm-domain" {
 }
 
 variable "dns_server_list" {
-  type = list(string)
+  type        = list(string)
   description = "List of DNS servers"
-  default = ["8.8.8.8", "8.8.4.4"]
+  default     = ["8.8.8.8", "8.8.4.4"]
 }
 
 variable "ipv4_address" {
-  type = string
+  type        = string
   description = "ipv4 addresses for a vm"
 }
 
